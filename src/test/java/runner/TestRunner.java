@@ -9,11 +9,12 @@ import cucumber.api.junit.Cucumber;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-features = "src/test/java/features"
-,glue= {"seleniumGlueCode"},
-//plugin = {"pretty", "html:target/htmlreports"}
+features = "src/test/java/features",
+glue= {"seleniumGlueCode"},
+//plugin = {"pretty", "html:target/htmlreports"},
 plugin = { "com.cucumber.listener.ExtentCucumberFormatter:target/cucumber-reports/report.html"}, 
 monochrome = true
+//tags={"@Scenario_01"}
 )
 public class TestRunner {
 	@AfterClass
